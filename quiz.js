@@ -109,4 +109,12 @@ showHighScores();
     if(userSelection === correctAnswer){
         score += rightAnswerReward
     }
+    else{
+        timeRemaining = Math.max(0, timeRemaining - wrongAnswerPenalty);
+    }
+    currentQuestionIndex++;
+    if(currentQuestion >= questions.length){
+        endTimer()
+        endGame()
+    }
 }
