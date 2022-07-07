@@ -91,9 +91,7 @@ showHighScores();
     let html = `<h2>${currentQuestion.q}</h2>`;
     for(let possibleAnswer of possibleAnswer){
         html += `<button>${possibleAnswer}</button>`;
-    }
-    html += `<button>${possibleAnswer}</button>`;
-  
+    }  
 
   document.querySelector("main").innerHTML = html;
 
