@@ -117,4 +117,7 @@ showHighScores();
         endTimer()
         endGame()
     }
+    else{
+        loadQuestions();
+    }
 }
