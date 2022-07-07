@@ -67,12 +67,20 @@
         q: "What is Nipsey birthname?",
         a: ["Ermias", "Nipsey", "Thundercat", "Samual"]
     }
-]
+ ]
 
 document.addEventListener("DOMContentLoaded", init);
 
-function init(){
+    function init(){
     document.querySelector("footer input").addEventListener("keyup", initialsEntered);
     document.querySelector("footer button").addEventListener("click", startGame);
 showHighScores();
 }
+
+  function startGame(){
+    score = 0;
+    currentQuestionIndex = 0;
+    startTimer()
+    document.body.classList.add("quiz");
+    loadQuestions()
+  }
