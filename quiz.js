@@ -84,3 +84,9 @@ showHighScores();
     document.body.classList.add("quiz");
     loadQuestions()
   }
+  function loadQuestions(){
+    let currentQuestion = questions[currentQuestionIndex];
+    let possibleAnswers = shuffle(currentQuestion.a);
+    let html = `<h2>${currentQuestion.q}</h2>`;
+    html += `<button>${possibleAnswer}</button>`;
+  }
