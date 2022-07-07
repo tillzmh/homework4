@@ -122,5 +122,10 @@ showHighScores();
     }
 }
   function endGame(){
-    
+    score += timeRemaining;
+    document.querySelector("footer h3").textContent = `Your score is ${score}`;
+    let highScores = getHighScores();
+    highScores.push({score, initials});
+    setHighScore(highScores);
+    showHighScores();
   }
