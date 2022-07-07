@@ -121,3 +121,6 @@ showHighScores();
         loadQuestions();
     }
 }
+  function endGame(){
+    
+  }
