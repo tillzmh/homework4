@@ -130,3 +130,7 @@ showHighScores();
     showHighScores();
     document.body.classList.remove("quiz");
   }
+
+  function startTimer(){
+    
+  }
