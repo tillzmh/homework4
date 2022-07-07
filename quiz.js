@@ -102,3 +102,7 @@ showHighScores();
     buttons.addEventListner("click", handleUserClick);
   }
 }
+
+ function handleUserClick(e){
+    
+}
