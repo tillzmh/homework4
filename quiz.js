@@ -128,4 +128,5 @@ showHighScores();
     highScores.push({score, initials});
     setHighScore(highScores);
     showHighScores();
+    document.body.classList.remove("quiz");
   }
