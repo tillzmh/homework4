@@ -97,9 +97,8 @@ showHighScores();
         let clone = JSON.parse(JSON.stringify(arr));
         return clone.sort((a,b) => Math.random());
     }
-  
 
-  document.querySelector("main").innerHTML = html;
+    document.querySelector("main").innerHTML = html;
 
   let buttons = document.querySelectorAll("main button");
   for(let buttons of buttons){
