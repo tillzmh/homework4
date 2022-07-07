@@ -67,7 +67,7 @@
         q: "What is Nipsey birthname?",
         a: ["Ermias", "Nipsey", "Thundercat", "Samual"]
     }
-];
+  ];
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -101,7 +101,7 @@ showHighScores();
     document.querySelector("main").innerHTML = html;
 
   let buttons = document.querySelectorAll("main button");
-  for(let buttons of buttons){
+  for(let button of buttons){
     buttons.addEventListner("click", handleUserClick);
   }
 }
@@ -132,6 +132,19 @@ showHighScores();
     setHighScore(highScores);
     showHighScores();
     document.body.classList.remove("quiz");
+}
+
+function showHighScores(){
+    let highScores = getHighScores();
+    let html = "";
+    if (!highScores.length){
+    html = "<li>No scores yet</li>";
+    }
+    else {
+    for (let {initials, score} of highScores){
+        html += `<li>${score}: ${initials}</li>`;
+    }
+    }
 }
 
   function getHighScores(){
