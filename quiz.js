@@ -139,3 +139,14 @@ showHighScores();
   function endTimer(){
     clearInterval(timer)
   }
+
+  function tick(){
+    document.querySelector("header time").textContent = timeRemaining;
+        if(timeRemaining <= 0){
+            endTimer();
+            endGame();
+        }
+        
+  }
+
+  
