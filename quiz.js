@@ -130,10 +130,16 @@ showHighScores();
     document.body.classList.remove("quiz");
   }
 
+  function getHighScores(){
+    let highScores = localStorage.getItem(storageName);
+    if (!highScores) return [];
+    return JSON.parse(highScores);
+    }
+
   function startTimer(){
     timeRemaining = timePerQuestion * questions.length;
     tick();
-    timer = setInterval(tick, 2000);
+    timer = setInterval(tick, 1000);
   }
   function endTimer(){
     clearInterval(timer)
