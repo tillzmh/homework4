@@ -149,4 +149,12 @@ showHighScores();
         
   }
 
-  
+  function initialsEntered(e){
+    initials = e.target.value.trim();
+    if (initials.length){
+document.querySelector("footer button").removeAttribute("disabled");
+}
+    else {
+document.querySelector("footer button").setAttribute("disabled", true);
+    }
+}
