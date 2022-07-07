@@ -106,4 +106,7 @@ showHighScores();
  function handleUserClick(e){
     let userSelection = e.target.textContent;
     let correctAnswer = questions[currentQuestionIndex].a[0];
+    if(userSelection === correctAnswer){
+        score += rightAnswerReward
+    }
 }
