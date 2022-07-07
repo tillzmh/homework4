@@ -84,11 +84,21 @@ showHighScores();
     document.body.classList.add("quiz");
     loadQuestions()
   }
+
   function loadQuestions(){
     let currentQuestion = questions[currentQuestionIndex];
     let possibleAnswers = shuffle(currentQuestion.a);
     let html = `<h2>${currentQuestion.q}</h2>`;
+    for(let possibleAnswer of possibleAnswer){
+        html += `<button>${possibleAnswer}</button>`;
+    }
     html += `<button>${possibleAnswer}</button>`;
-  }
+  
 
   document.querySelector("main").innerHTML = html;
+
+  let buttons = document.querySelectorAll("main button");
+  for(let buttons of buttons){
+    buttons.addEventListner("click", handleUserClick);
+  }
+}
