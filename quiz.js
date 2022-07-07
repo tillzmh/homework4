@@ -10,7 +10,7 @@
   let timeRemaining;
   let timer;
   let initials = "";
-  
+
   const questions = [
     {
         q: "Who is Nipsey Hussle?",
@@ -68,3 +68,11 @@
         a: ["Ermias", "Nipsey", "Thundercat", "Samual"]
     }
 ]
+
+document.addEventListener("DOMContentLoaded", init);
+
+function init(){
+    document.querySelector("footer input").addEventListener("keyup", initialsEntered);
+    document.querySelector("footer button").addEventListener("click", startGame);
+showHighScores();
+}
