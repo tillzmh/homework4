@@ -132,5 +132,10 @@ showHighScores();
   }
 
   function startTimer(){
-    
+    timeRemaining = timePerQuestion * questions.length;
+    tick();
+    timer = setInterval(tick, 2000);
+  }
+  function endTimer(){
+    clearInterval(timer)
   }
