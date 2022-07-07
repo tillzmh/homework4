@@ -145,6 +145,7 @@ showHighScores();
             endTimer();
             endGame();
         }
+        else timeRemaining--;
         
   }
 
@@ -157,3 +158,4 @@ document.querySelector("footer button").removeAttribute("disabled");
 document.querySelector("footer button").setAttribute("disabled", true);
     }
 }
+
