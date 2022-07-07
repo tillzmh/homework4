@@ -67,7 +67,7 @@
         q: "What is Nipsey birthname?",
         a: ["Ermias", "Nipsey", "Thundercat", "Samual"]
     }
- ]
+];
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -83,7 +83,7 @@ showHighScores();
     startTimer()
     document.body.classList.add("quiz");
     loadQuestions()
-  }
+}
 
   function loadQuestions(){
     let currentQuestion = questions[currentQuestionIndex];
@@ -91,6 +91,11 @@ showHighScores();
     let html = `<h2>${currentQuestion.q}</h2>`;
     for(let possibleAnswer of possibleAnswer){
         html += `<button>${possibleAnswer}</button>`;
+    }
+
+  function shuffle(arr){
+        let clone = JSON.parse(JSON.stringify(arr));
+        return clone.sort((a,b) => Math.random());
     }
   
 
@@ -128,13 +133,19 @@ showHighScores();
     setHighScore(highScores);
     showHighScores();
     document.body.classList.remove("quiz");
-  }
+}
 
   function getHighScores(){
     let highScores = localStorage.getItem(storageName);
     if (!highScores) return [];
     return JSON.parse(highScores);
-    }
+}
+
+  function setHighScores(highScores){
+        highScores.sort((a,b) => b.score - a.score);
+        highScores = highScores.slice(0, maxNumberOfHighScores);
+  localStorage.setItem(storageName, JSON.stringify(highScores));
+}
 
   function startTimer(){
     timeRemaining = timePerQuestion * questions.length;
