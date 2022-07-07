@@ -90,3 +90,5 @@ showHighScores();
     let html = `<h2>${currentQuestion.q}</h2>`;
     html += `<button>${possibleAnswer}</button>`;
   }
+
+  document.querySelector("main").innerHTML = html;
