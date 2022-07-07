@@ -104,5 +104,6 @@ showHighScores();
 }
 
  function handleUserClick(e){
-    
+    let userSelection = e.target.textContent;
+    let correctAnswer = questions[currentQuestionIndex].a[0];
 }
