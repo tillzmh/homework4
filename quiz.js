@@ -5,6 +5,7 @@
   const storageName = "quiz";
   const maxNumberOfHighScores = 10;
 
+
   let score = 0;
   let currentQuestionIndex = 0;
   let timeRemaining;
@@ -67,7 +68,7 @@
         q: "What is Nipsey birthname?",
         a: ["Ermias", "Nipsey", "Thundercat", "Samual"]
     }
-  ];
+];
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -82,28 +83,26 @@ showHighScores();
     currentQuestionIndex = 0;
     startTimer()
     document.body.classList.add("quiz");
-    loadQuestions()
+    loadQuestion();
 }
 
-  function loadQuestions(){
-    let currentQuestion = questions[currentQuestionIndex];
-    let possibleAnswers = shuffle(currentQuestion.a);
+ function loadQuestion(){
+    let currentQuestion = questions[currentQuestionIndex]; 
+    let possibleAnswers = shuffle(currentQuestion.a); 
     let html = `<h2>${currentQuestion.q}</h2>`;
-    for(let possibleAnswer of possibleAnswer){
+    for (let possibleAnswer of possibleAnswers){
         html += `<button>${possibleAnswer}</button>`;
     }
-
-  function shuffle(arr){
-        let clone = JSON.parse(JSON.stringify(arr));
-        return clone.sort((a,b) => Math.random());
+document.querySelector("main").innerHTML = html;
+    let buttons = document.querySelectorAll("main button");
+    for (let button of buttons){
+        button.addEventListener("click", handleUserClick);
     }
+}
 
-    document.querySelector("main").innerHTML = html;
-
-  let buttons = document.querySelectorAll("main button");
-  for(let button of buttons){
-    buttons.addEventListner("click", handleUserClick);
-  }
+function shuffle(arr){
+    let clone = JSON.parse(JSON.stringify(arr));
+    return clone.sort((a,b) => Math.random());
 }
 
  function handleUserClick(e){
