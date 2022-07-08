@@ -187,3 +187,7 @@ document.querySelector("footer button").setAttribute("disabled", true);
     }
 }
 
+ function shuffle(arr){
+    let clone = JSON.parse(JSON.stringify(arr));
+    return clone.sort((a,b) => Math.random() - 0.5);
+  }
