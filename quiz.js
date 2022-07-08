@@ -115,12 +115,12 @@ function shuffle(arr){
         timeRemaining = Math.max(0, timeRemaining - wrongAnswerPenalty);
     }
     currentQuestionIndex++;
-    if(currentQuestion >= questions.length){
+    if(currentQuestionIndex >= questions.length){
         endTimer()
         endGame()
     }
     else{
-        loadQuestions();
+        loadQuestion();
     }
 }
   function endGame(){
